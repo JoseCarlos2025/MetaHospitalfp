@@ -18,6 +18,13 @@ evaluacion para desarrollar en conjunto la idea del proyecto.
 
 ![Casos de uso 2023-10-31 084804](https://github.com/JoseCarlos2025/Neonatos/assets/118464246/b94ec6cc-0832-4b98-a76d-0f04e4d21431)
 
+# Diagrama de clases
+
+![Diagrama de clases 2023-10-30 193104](https://github.com/JoseCarlos2025/Neonatos/assets/118464246/874c7d5a-66fb-498c-88ad-2e54270912e7)
+
+# Diagrama de Entidad/Interrelación
+
+![Diagrama de Entidad/Interrelación 2023-10-30 193024](https://github.com/JoseCarlos2025/Neonatos/assets/118464246/2d5cb512-392b-4b08-8246-2a0c7cbea6b6)
 
 ## Comenzando 🚀
 
