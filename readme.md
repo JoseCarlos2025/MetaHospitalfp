@@ -1,4 +1,4 @@
-# Proyecto Los Gladiolos
+# Proyecto MetaHospitalFP
 
 El IES Los Gladiolos de la isla de Tenerife tiene aprobado un proyecto de Innovación para crear
 una Aplicación de Realidad Virtual que permita a su alumnado de sanitario realizar por ejemplo
