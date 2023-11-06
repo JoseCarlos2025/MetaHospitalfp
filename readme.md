@@ -32,7 +32,7 @@ y este que será de administración de centros educativos.
 
 ## Prototipo
 
-Prototipo en figma [Prototipo en figma](https://www.figma.com/file/cKBt0NM8CGovFJGsIVfnug/MetaHospitalFp?type=design&node-id=0%3A1&mode=design&t=XYOpM1Ug3TnG21M6-1)
+Prototipo en [figma](https://www.figma.com/file/cKBt0NM8CGovFJGsIVfnug/MetaHospitalFp?type=design&node-id=0%3A1&mode=design&t=XYOpM1Ug3TnG21M6-1)
 
 ## Construido con 🛠️
 
