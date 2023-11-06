@@ -11,10 +11,14 @@ su alumnado.
 La idea es que así mismo la aplicación pueda ser usada por todos los centros de sanitario de
 Canarias, incluidas las universidades canarias.
 
-# Casos de uso
+# Proyecto
 
-El proyecto se ha dividido en dos aplicaciones a parte en esta evaluación, las cual en la segunda
-evaluacion para desarrollar en conjunto la idea del proyecto.
+El proyecto se ha dividido en dos aplicaciones aparte las cuales se juntarán en la segunda evaluación
+para poder desarrollar en conjunto a mi compañero la aplicación final, para ello hemos analizado las
+los diagramas que se nos han entregado, y desarrollaremos un proyecto de administración de actividades
+y este que será de administración de centros educativos.
+
+# Casos de uso
 
 ![Casos de uso 2023-10-31 084804](https://github.com/JoseCarlos2025/Neonatos/assets/118464246/b94ec6cc-0832-4b98-a76d-0f04e4d21431)
 
@@ -26,20 +30,9 @@ evaluacion para desarrollar en conjunto la idea del proyecto.
 
 ![Diagrama de Entidad/Interrelación 2023-10-30 193024](https://github.com/JoseCarlos2025/Neonatos/assets/118464246/2d5cb512-392b-4b08-8246-2a0c7cbea6b6)
 
-## Comenzando 🚀
+## Prototipo
 
-### Pre-requisitos 📋
-
-### Instalación 🔧
-
-## Ejecutando las pruebas ⚙️
-
-### Analice las pruebas end-to-end 🔩
-
-### Y las pruebas de estilo de codificación ⌨️
-
-## Despliegue 📦
-
+Prototipo en figma [Prototipo en figma](https://www.figma.com/file/cKBt0NM8CGovFJGsIVfnug/MetaHospitalFp?type=design&node-id=0%3A1&mode=design&t=XYOpM1Ug3TnG21M6-1)
 
 ## Construido con 🛠️
 
