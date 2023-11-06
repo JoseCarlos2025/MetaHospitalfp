@@ -13,7 +13,7 @@ Canarias, incluidas las universidades canarias.
 
 # Proyecto
 
-El proyecto se ha dividido en dos aplicaciones aparte las cuales se juntarán en la segunda evaluación
+El proyecto se ha dividido en dos aplicaciones aparte las cuales se juntarán en la segunda evaluación,
 para poder desarrollar en conjunto a mi compañero la aplicación final, para ello hemos analizado las
 los diagramas que se nos han entregado, y desarrollaremos un proyecto de administración de actividades
 y este que será de administración de centros educativos.
