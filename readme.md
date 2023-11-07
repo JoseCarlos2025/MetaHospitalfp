@@ -20,15 +20,16 @@ y este que será de administración de centros educativos.
 
 # Casos de uso
 
-![Casos de uso 2023-10-31 084804](https://github.com/JoseCarlos2025/Neonatos/assets/118464246/b94ec6cc-0832-4b98-a76d-0f04e4d21431)
+![Casos de uso 2023-10-31 084804](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/67ca5d55-b02c-4519-993b-7a24bb736623)
 
 # Diagrama de clases
 
-![Diagrama de clases 2023-10-30 193104](https://github.com/JoseCarlos2025/Neonatos/assets/118464246/874c7d5a-66fb-498c-88ad-2e54270912e7)
+![Diagrama de clases 2023-10-30 193104](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/1586f5c4-b320-4700-965f-8c3a38c911cd)
+
 
 # Diagrama de Entidad/Interrelación
 
-![Diagrama de Entidad/Interrelación 2023-10-30 193024](https://github.com/JoseCarlos2025/Neonatos/assets/118464246/2d5cb512-392b-4b08-8246-2a0c7cbea6b6)
+![Diagrama de Entidad/Interrelación 2023-10-30 193024](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/1d9a2e53-bf44-416a-baba-00dce438e6d9)
 
 ## Prototipo
 
