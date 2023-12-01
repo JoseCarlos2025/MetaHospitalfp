@@ -1,5 +1,5 @@
 const db = require("../models");
-const User = db.user;
+const User = db.User;
 const Op = db.sequelize.Op;
 const utils = require("../utils");
 const bcrypt = require('bcryptjs');
@@ -39,10 +39,8 @@ exports.create = async (req, res) => {
     }
 
     try {
-        const UID = await validationUID();
-
         const user = {
-            id: UID,
+            id: req.body.id,
             name: req.body.name,
             email: req.body.email,
             discriminator: req.body.discriminator,
@@ -58,7 +56,9 @@ exports.create = async (req, res) => {
 
                 const userObj = utils.getCleanUser(data);
 
-                return res.json({ user: userObj, access_token: token });
+                delete userObj.password;
+
+                return res.json({ user: userObj, access_token: token});
             }
 
             user.password = bcrypt.hashSync(req.body.password);
@@ -68,6 +68,8 @@ exports.create = async (req, res) => {
                 const token = utils.generateToken(data);
                 
                 const userObj = utils.getCleanUser(data);
+
+                delete userObj.password;
                 
                 return res.json({ user: userObj, access_token: token });
             })

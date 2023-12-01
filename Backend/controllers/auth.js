@@ -3,7 +3,7 @@ const utils = require('../utils');
 const bcrypt = require('bcryptjs');
 
 const db = require("../models");
-const User = db.user;
+const User = db.User;
 
 exports.signin = (req, res) => {
   const user = req.body.email;

@@ -1,5 +1,3 @@
-// models/index.js
-
 const fs = require('fs');
 const path = require('path');
 const { Sequelize, DataTypes } = require('sequelize');
@@ -31,6 +29,9 @@ Object.keys(db).forEach(modelName => {
     db[modelName].associate(db);
   }
 });
+
+console.log(db.User);
+
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

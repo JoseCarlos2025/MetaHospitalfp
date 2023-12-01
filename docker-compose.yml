@@ -1,0 +1,46 @@
+version: '3.3'
+services:
+  db:
+    image: mysql
+    env_file:
+      - ./backend/.env
+    ports:
+      - 44306:3306
+    volumes:
+      - my-db:/var/lib/mysql
+    networks:
+      - app-network
+  api:
+    image: carlos_metahospitalfp_api
+    build: ./backend
+    env_file:
+      - ./backend/.env
+    ports: 
+      - '13080:13080'
+    expose:
+      - '13080'
+    networks:
+      - app-network
+    depends_on:
+      - db
+  app:
+    image: carlos_metahospitalfp_app
+    tty: true
+    build: ./frontend
+    env_file:
+      - ./frontend/.env
+    ports: 
+      - '13081:13081'
+    expose:
+      - '13081'
+    stdin_open: true
+    networks:
+      - app-network
+    depends_on:
+      - api
+volumes:
+  my-db:
+    driver: local
+networks:
+  app-network:
+    driver: bridge

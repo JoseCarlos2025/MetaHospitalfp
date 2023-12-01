@@ -1,0 +1,70 @@
+.content{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.box{
+    border-radius: 71px;
+    background-color: white;
+    height: 85vh;
+    width: 80vw;
+    display: flex;
+}
+
+.box-rigt{
+    height: 100%;
+    width: 50%;
+    background-color: #3E94E7;
+}
+
+.box-left{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imputs{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input{
+    margin-top: 20px;
+}
+
+.button-login{
+    width: 50%;
+    margin-top: 48px;
+}
+
+.logo{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.logo img{
+    align-self: center;
+    padding-top: 10%;
+    width: 60%;
+    height: auto;
+}
+
+.logo h1{
+    color: #3E94E7;
+    text-align: center;
+}
+
+.error-message{
+    color: red;
+}

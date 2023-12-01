@@ -1,9 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const user = sequelize.define("user",{
-        id:{
-            type: Sequelize.STRING,
-            primaryKey: true
-        },
+    const User = sequelize.define("User", {
         name: {
             type: Sequelize.STRING
         },
@@ -14,9 +10,16 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING
         },
         password: {
-            type:  Sequelize.STRING
+            type: Sequelize.STRING
         }
     });
 
-    return user;
-}
+    User.associate = (models) => {
+        User.belongsToMany(models.School, { through: models.StudentSchool });
+        User.belongsToMany(models.School, { through: models.TeacherSchool });
+        User.belongsToMany(models.Group, { through: models.TeacherCourse });
+        User.belongsTo(models.School, { through: 'SchoolId' });
+    };
+
+    return User;
+};

@@ -1,4 +1,6 @@
 # Archivos de configuración
 .env
 
+.cert
 
+/node_modules
