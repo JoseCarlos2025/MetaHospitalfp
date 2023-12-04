@@ -97,6 +97,22 @@ exports.findAll = (req, res) => {
     })
 };
 
+exports.findAllStudent = (req, res) => {
+    User.findAll({where: {discriminator: 'estudiante'}},{attributes: { exclude: ['password'] }}).then((alluser) => {
+        res.send(alluser)
+    }).catch(err => {
+        res.status(500).send({ message: "Server error. Couldn't find Users" });
+    })
+};
+
+exports.findAllTeachers = (req, res) => {
+    User.findAll({where: {discriminator: 'profesor'}},{attributes: { exclude: ['password'] }}).then((alluser) => {
+        res.send(alluser)
+    }).catch(err => {
+        res.status(500).send({ message: "Server error. Couldn't find Users" });
+    })
+};
+
 exports.findOne = (req, res) => {
     const id = req.params.id;
 

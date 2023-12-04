@@ -10,6 +10,10 @@ module.exports = app => {
 
     router.get("/",auth.isAuthenticated,user.findAll);
 
+    router.get("/students",auth.isAuthenticated,user.findAllStudent);
+
+    router.get("/teachers",auth.isAuthenticated,user.findAllTeachers);
+
     router.put("/:id",auth.isAuthenticated,user.update);
 
     router.delete("/:id",auth.isAuthenticated,user.delete);

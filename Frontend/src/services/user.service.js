@@ -20,6 +20,34 @@ export const getUser = async (token) => {
     }
 };
 
+export const getUserStudents = async (token) => {
+    try {
+        const response = await axios.get(API_URL + '/users/students',{
+            headers: {
+                'Authorization': `Bearer ${token}`,
+            }
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error geting User: ', error);
+        return null;
+    }
+};
+
+export const getUserTeachers = async (token) => {
+    try {
+        const response = await axios.get(API_URL + '/users/teachers',{
+            headers: {
+                'Authorization': `Bearer ${token}`,
+            }
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error geting User: ', error);
+        return null;
+    }
+};
+
 export const signin = async (email, password) => {
     try {
         const response = await axios.post(
@@ -86,6 +114,8 @@ export const createNewUser = async (potUser,email) => {
 
 const UserService = {
     getUser,
+    getUserStudents,
+    getUserTeachers,
     signin,
     deleteUser,
     updateUser,

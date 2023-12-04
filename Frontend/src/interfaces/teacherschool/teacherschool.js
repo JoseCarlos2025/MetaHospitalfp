@@ -1,37 +1,37 @@
 import React, { useState, useEffect } from 'react';
-import './studentschool.css';
+import './teacherschool.css';
 import BasicList from '../../components/basiclist/basiclist';
-import StudentSchoolsService from '../../services/studentschool.service';
+import TeacherSchoolsService from '../../services/teacherschool.service';
 import UserService from '../../services/user.service';
 import Menu from '../../components/menu/menu';
 import Rightmenu from '../../components/rightmenu/rightmenu';
 import { Input, List } from 'antd';
 import Consts from '../../components/consts/consts';
 
-function StudentSchools() {
-    const [students, setStudents] = useState([]);
+function TeacherSchools() {
+    const [teacher, setTeacher] = useState([]);
     const [users, setUsers] = useState([]);
     const [name, setName] = useState('');
     const [userId, setUserId] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const Headlines = ['Nombre'];
 
-    const getStudents = async () => {
+    const getTeacher = async () => {
         try {
-            const response = await StudentSchoolsService.getStudentsBySchool(
+            const response = await TeacherSchoolsService.getTeachersBySchool(
                 localStorage.getItem('AccessToken'),
                 localStorage.getItem('schoolId')
             );
-            const studentList = response.map(student => student.User);
-            setStudents(studentList);
+            const teacherList = response.map(teacher => teacher.User);
+            setTeacher(teacherList);
         } catch (error) {
-            console.error('Error fetching students:', error);
+            console.error('Error fetching teacher:', error);
         }
     };
 
     const getUsers = async () => {
         try {
-            const response = await UserService.getUserStudents(localStorage.getItem('AccessToken'));
+            const response = await UserService.getUserTeachers(localStorage.getItem('AccessToken'));
             const userList = response;
             setUsers(userList);
         } catch (error) {
@@ -40,7 +40,7 @@ function StudentSchools() {
     };
 
     useEffect(() => {
-        getStudents();
+        getTeacher();
         getUsers();
     }, []);
 
@@ -49,9 +49,9 @@ function StudentSchools() {
         setSearchResults(filteredUsers.slice(0, 3));
     };
 
-    const renderSchoolRow = (student) => (
+    const renderSchoolRow = (teacher) => (
         <>
-            <td>{student.name}</td>
+            <td>{teacher.name}</td>
         </>
     );
 
@@ -66,7 +66,7 @@ function StudentSchools() {
             <h1>{String(Consts.ADD_MODE)}</h1>
             <p>Name</p>
             <Input.Search
-                placeholder="Buscar estudiantes"
+                placeholder="Buscar profesor"
                 value={name}
                 onChange={(e) => {
                     setName(e.target.value);
@@ -88,15 +88,15 @@ function StudentSchools() {
 
     const onDelete = (id) => {
         try {
-            getStudents();
+            getTeacher();
             
-            StudentSchoolsService.deleteStudentFromSchool(localStorage.getItem('AccessToken'), localStorage.getItem('schoolId') ,id);
+            TeacherSchoolsService.deleteTeacherFromSchool(localStorage.getItem('AccessToken'), localStorage.getItem('schoolId') ,id);
             
-            getStudents();
+            getTeacher();
 
-            console.log('student deleted successfully');
+            console.log('teacher deleted successfully');
         } catch (error) {
-            console.error('Error delete student:', error);
+            console.error('Error delete teacher:', error);
         }
     };
 
@@ -108,16 +108,16 @@ function StudentSchools() {
                 return;
             }
     
-            const student = {
+            const teacher = {
                 UserId: userId,
             };
     
-            await StudentSchoolsService.createNewStudent(localStorage.getItem('AccessToken'), localStorage.getItem('schoolId'), student);
+            await TeacherSchoolsService.createNewTeacher(localStorage.getItem('AccessToken'), localStorage.getItem('schoolId'), teacher);
     
-            getStudents();
-            console.log('New student created successfully');
+            getTeacher();
+            console.log('New teacher created successfully');
         } catch (error) {
-            console.error('Error updating/creating student:', error);
+            console.error('Error updating/creating teacher:', error);
         }
     };
 
@@ -125,7 +125,7 @@ function StudentSchools() {
         <div className='container'>
             <div className='container-left'>
                 <Menu />
-                <BasicList items={students} renderRow={renderSchoolRow} Headlines={Headlines} onDelete={onDelete} />
+                <BasicList items={teacher} renderRow={renderSchoolRow} Headlines={Headlines} onDelete={onDelete} />
             </div>
             <div className='container-right'>
                 <Rightmenu renderImputs={renderSchoolImputs} onSubmit={onSubmit} />
@@ -134,4 +134,4 @@ function StudentSchools() {
     );
 }
 
-export default StudentSchools;
+export default TeacherSchools;

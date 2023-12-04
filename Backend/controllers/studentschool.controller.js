@@ -58,10 +58,10 @@ exports.deleteStudentFromSchool = async (req, res) => {
     const schoolId = req.params.schoolId;
 
     try {
-        await student.destroy({
+        await StudentSchool.destroy({
             where: {
-            UserId: userId,
-            SchoolId: schoolId,
+            userId: userId,
+            schoolId: schoolId,
         }});
 
     } catch (error) {

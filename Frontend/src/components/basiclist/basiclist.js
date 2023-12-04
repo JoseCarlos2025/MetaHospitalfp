@@ -21,7 +21,7 @@ const BasicList = ({ items, renderRow, Headlines, onDelete, onEdit }) => {
                 {renderRow(item)}
                 <td>
                   {onEdit && <EditOutlined style={{ marginRight: 8 }} onClick={() => onEdit(item.id)} />}
-                  <DeleteOutlined onClick={() => onDelete(item)} /> 
+                  <DeleteOutlined onClick={() => onDelete(item.id)} /> 
                 </td>
               </tr>
             ))

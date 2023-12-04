@@ -32,7 +32,7 @@ function SchoolsAdmin() {
     }, []);
 
     const navigateSchool = (id) =>{
-        Consts.SchoolId = id;
+        localStorage.setItem('schoolId', id)
         console.log(id);
     }
 

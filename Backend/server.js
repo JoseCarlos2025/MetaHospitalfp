@@ -82,3 +82,5 @@ if (process.env.HTTPS == "true") {
 server.listen(port, () => {
   console.log('Server started on: ' + port);
 });
+
+module.exports = app;

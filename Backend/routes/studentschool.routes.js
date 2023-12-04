@@ -8,7 +8,7 @@ module.exports = (app) => {
 
     router.post("/:schoolId/students",auth.isAuthenticated, studentSchool.addStudentToSchool);
 
-    router.delete("/schools/:schoolId/students/:userId", auth.isAuthenticated, studentSchool.deleteStudentFromSchool);
+    router.delete("/:schoolId/students/:userId", auth.isAuthenticated, studentSchool.deleteStudentFromSchool);
 
     app.use("/api/schools", router);
 };

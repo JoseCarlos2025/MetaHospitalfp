@@ -52,3 +52,20 @@ exports.addTeacherToSchool = async (req, res) => {
         res.status(500).send({ message: "Error del servidor. No se pudo agregar al profesor a la escuela." });
     }
 };
+
+exports.deleteTeacherFromSchool = async (req, res) => {
+    const userId = req.params.userId;
+    const schoolId = req.params.schoolId;
+
+    try {
+        await TeacherSchool.destroy({
+            where: {
+            userId: userId,
+            schoolId: schoolId,
+        }});
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({ message: "Error del servidor. No se pudo eliminar al estudiante de la escuela." });
+    }
+};

@@ -37,7 +37,9 @@ export const deleteStudentFromSchool = async (token, schoolId, userId) => {
                 'Authorization': `Bearer ${token}`,
             }
         });
+
         return response.data;
+        
     } catch (error) {
         console.error('Error deleting student: ', error);
         return null;
