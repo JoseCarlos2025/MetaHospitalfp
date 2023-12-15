@@ -66,7 +66,7 @@ La idea central del desarrollo es crear una Aplicación de Realidad Virtual que 
   - Navegación sencilla para mejorar la experiencia del usuario.
 
 - **Comunicación con el Servidor:**
-  - Uso de API RESTful para la comunicación entre las aplicaciones y el servidor.
+  - Uso de Axio para la comunicación entre las aplicaciones y el servidor.
   - Manejo eficiente de solicitudes y respuestas para una experiencia fluida.
 
 - **Seguridad:**
