@@ -4,8 +4,11 @@ import BasicList from '../../components/basiclist/basiclist';
 import UserService from '../../services/user.service';
 import Menu from '../../components/menu/menu';
 import Rightmenu from '../../components/rightmenu/rightmenu';
-import { Input,Select } from 'antd';
+import { Input, Select } from 'antd';
 import Consts from '../../components/consts/consts';
+import PopForm from '../../components/popform/popform';
+import Tag from '../../components/tag/tag';
+import { useLocation } from 'react-router-dom';
 
 function UserAdmin() {
     const [users, setUsers] = useState([]);
@@ -15,6 +18,8 @@ function UserAdmin() {
     const [discriminator, setDiscriminator] = useState('Estudiante');
     const Headlines = ['Nombre', 'Email', 'Identificador'];
     const [mode, setMode] = useState(Consts.ADD_MODE);
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const location = useLocation(); 
 
     const optionDiscriminator = [
         { value: 'Estudiante', label: 'Estudiante' },
@@ -28,7 +33,7 @@ function UserAdmin() {
 
     const getUsers = async () => {
         try {
-            const response = await UserService.getUser(localStorage.getItem('AccessToken'));
+            const response = await UserService.getUsers(localStorage.getItem('AccessToken'));
             const userList = response;
             setUsers(userList);
         } catch (error) {
@@ -38,9 +43,18 @@ function UserAdmin() {
 
 
     useEffect(() => {
-        
         getUsers();
 
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth <= 767);
+        };
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
 
@@ -67,7 +81,7 @@ function UserAdmin() {
             <Select
                 defaultValue="Estudiante"
                 value={discriminator}
-                options={optionDiscriminator }
+                options={optionDiscriminator}
                 onChange={handleChange} />
         </>
     );
@@ -133,11 +147,13 @@ function UserAdmin() {
         <div className='container'>
             <div className='container-left'>
                 <Menu />
+                <Tag name="Usuarios"/>
                 <BasicList items={users} renderRow={renderUserRow} Headlines={Headlines} onDelete={onDelete} onEdit={Edit}></BasicList>
+                {isSmallScreen && <PopForm renderInputs={renderUserImputs} cancel={Cancel} onSubmit={onSubmit} showModalAutomatically={mode === Consts.EDIT_MODE} />}
             </div>
-            <div className='container-right'>
-                <Rightmenu renderImputs={renderUserImputs} cancel={Cancel} mode={mode} onSubmit={onSubmit} />
-            </div>
+            {!isSmallScreen && <div className='container-right'>
+                <Rightmenu renderImputs={renderUserImputs} cancel={Cancel} mode={mode} onSubmit={onSubmit} currentRoute={location.pathname}/>
+            </div>}
         </div>
     );
 

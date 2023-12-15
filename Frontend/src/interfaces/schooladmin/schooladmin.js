@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './schooladmin.css';
 import BasicList from '../../components/basiclist/basiclist';
 import SchoolsService from '../../services/schools.service';
 import Menu from '../../components/menu/menu';
@@ -7,6 +6,9 @@ import Rightmenu from '../../components/rightmenu/rightmenu';
 import { Input } from 'antd';
 import Consts from '../../components/consts/consts';
 import { Link } from 'react-router-dom';
+import PopForm from '../../components/popform/popform';
+import Tag from '../../components/tag/tag';
+import { useLocation } from 'react-router-dom';
 
 function SchoolsAdmin() {
     const [Schools, setSchools] = useState([]);
@@ -14,6 +16,8 @@ function SchoolsAdmin() {
     const [Id, setId] = useState('');
     const Headlines = ['Nombre'];
     const [mode, setMode] = useState(Consts.ADD_MODE);
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const location = useLocation();
 
     const getSchools = async () => {
         try {
@@ -29,17 +33,29 @@ function SchoolsAdmin() {
 
         getSchools();
 
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth <= 767);
+          };
+      
+          window.addEventListener('resize', handleResize);
+          handleResize();
+      
+          return () => {
+            window.removeEventListener('resize', handleResize);
+          };
+
     }, []);
 
-    const navigateSchool = (id) =>{
-        localStorage.setItem('schoolId', id)
+    const navigateSchool = (id,name) =>{
+        localStorage.setItem('schoolId', id);
+        localStorage.setItem('schoolName', name)
         console.log(id);
     }
 
 
     const renderSchoolRow = (school) => (
         <>
-            <td><Link to='/studentschool' onClick={navigateSchool(school.id)}>{school.name}</Link></td>
+            <td><Link onClick={() => navigateSchool(school.id, school.name)} to='/adminschool' >{school.name}</Link></td>
         </>
     );
 
@@ -106,11 +122,13 @@ function SchoolsAdmin() {
         <div className='container'>
             <div className='container-left'>
                 <Menu />
+                <Tag name='Escuelas' />
                 <BasicList items={Schools} renderRow={renderSchoolRow} Headlines={Headlines} onDelete={onDelete} onEdit={Edit}></BasicList>
+                {isSmallScreen && <PopForm renderInputs={renderSchoolImputs} cancel={Cancel} onSubmit={onSubmit} showModalAutomatically={mode === Consts.EDIT_MODE} />}
             </div>
-            <div className='container-right'>
-                <Rightmenu renderImputs={renderSchoolImputs} cancel={Cancel} mode={mode} onSubmit={onSubmit} />
-            </div>
+            {!isSmallScreen && <div className='container-right'>
+                <Rightmenu renderImputs={renderSchoolImputs} cancel={Cancel} mode={mode} onSubmit={onSubmit} currentRoute={location.pathname}/>
+            </div>}
         </div>
     );
 

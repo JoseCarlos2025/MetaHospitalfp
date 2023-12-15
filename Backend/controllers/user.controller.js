@@ -44,7 +44,8 @@ exports.create = async (req, res) => {
             name: req.body.name,
             email: req.body.email,
             discriminator: req.body.discriminator,
-            password: req.body.password
+            password: req.body.password,
+            filename: req.file ? req.file.filename : ""
         };
 
         User.findOne({ where: { email: user.email } }).then(data => {
@@ -90,20 +91,24 @@ exports.create = async (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-    User.findAll({attributes: { exclude: ['password'] }}).then((alluser) => {
+    User.findAll({
+        attributes: { exclude: ['password'] }
+    }).then((alluser) => {
         res.send(alluser)
     }).catch(err => {
         res.status(500).send({ message: "Server error. Couldn't find Users" });
     })
 };
 
-exports.findAllStudent = (req, res) => {
+exports.findAllStudents = (req, res) => {
     User.findAll({where: {discriminator: 'estudiante'}},{attributes: { exclude: ['password'] }}).then((alluser) => {
         res.send(alluser)
     }).catch(err => {
         res.status(500).send({ message: "Server error. Couldn't find Users" });
     })
 };
+
+
 
 exports.findAllTeachers = (req, res) => {
     User.findAll({where: {discriminator: 'profesor'}},{attributes: { exclude: ['password'] }}).then((alluser) => {
@@ -149,7 +154,27 @@ exports.update = (req, res) => {
     const updatedUser = {
         name: req.body.name,
         discriminator: req.body.discriminator,
-        password: req.body.password
+        email: req.body.email
+    };
+
+    User.update(updatedUser, {
+        where: { id: userId }
+    }).then((result) => {
+        if (result[0] === 1) {
+            res.send({ message: "User updated successfully." });
+        } else {
+            res.status(404).send({ message: "User not found or no changes made." });
+        }
+    }).catch(err => {
+        res.status(500).send({ message: "Server error. Couldn't update User." });
+    });
+}
+
+exports.updatefile = (req, res) => {
+    const userId = req.params.id;
+
+    const updatedUser = {
+        filename: req.file ? req.file.filename : ""
     };
 
     User.update(updatedUser, {

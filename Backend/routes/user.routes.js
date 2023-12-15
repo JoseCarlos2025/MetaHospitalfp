@@ -1,22 +1,34 @@
 module.exports = app => {
-    const user = require("../controllers/user.controller");
-    const auth = require("../controllers/auth");
+  const user = require("../controllers/user.controller");
+  const auth = require("../controllers/auth");
+  var upload = require('../multer/upload');
 
-    var router = require("express").Router();
+  var router = require("express").Router();
 
-    router.post("/",user.create);
+  router.post("/", user.create);
+  router.post("/", upload.single('file'), user.create);
 
-    router.post("/signin", auth.signin);
+  router.post("/signin", auth.signin);
 
-    router.get("/",auth.isAuthenticated,user.findAll);
+  router.get("/", auth.isAuthenticated, user.findAll);
 
-    router.get("/students",auth.isAuthenticated,user.findAllStudent);
+  router.get("/user/:id", auth.isAuthenticated, user.findOne);
 
-    router.get("/teachers",auth.isAuthenticated,user.findAllTeachers);
+  router.get("/students", auth.isAuthenticated, user.findAllStudents);
 
-    router.put("/:id",auth.isAuthenticated,user.update);
+  router.get("/teachers", auth.isAuthenticated, user.findAllTeachers);
 
-    router.delete("/:id",auth.isAuthenticated,user.delete);
+  router.put("/:id", auth.isAuthenticated, upload.single('file'), (req, res) => {
+    if (req.file) {
+      // Handle updating with an image
+      user.updatefile(req, res);
+    } else {
+      // Handle updating without an image
+      user.update(req, res);
+    }
+  })
 
-    app.use("/api/users", router);
+  router.delete("/:id", auth.isAuthenticated, user.delete);
+
+  app.use("/api/users", router);
 }

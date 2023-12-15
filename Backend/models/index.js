@@ -30,8 +30,6 @@ Object.keys(db).forEach(modelName => {
   }
 });
 
-console.log(db.User);
-
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

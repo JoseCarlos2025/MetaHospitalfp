@@ -1,13 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './menu.css';
 import logo from '../../img/Icon.png';
-import Consts from '../consts/consts';
+import { Link, useLocation } from 'react-router-dom';
 
 function Menu() {
 
-    const handleItemClick = (item) => {
-        Consts.activeItem = item;
+    const location = useLocation();
+
+    const getMenuActiveItem = () => {
+        const { pathname } = location;
+
+        if (pathname === '/adminhome') {
+            return 'Inicio';
+        } else if (pathname === '/useradmin') {
+            return 'Usuarios';
+        } else if (pathname === '/schooladmin') {
+            return 'Escuelas';
+        }
+
+        return 'Inicio'; 
     };
 
     return (
@@ -17,20 +28,18 @@ function Menu() {
                     <img src={logo} alt="logotype" className="logotype" />
                     <li>
                         <Link
-                            to="/useradmin"
+                            to="/adminhome"
                             data-item="Inicio"
-                            className={Consts.activeItem === 'Inicio' || window.location.pathname === '/useradmin' ? 'active' : ''}
-                            onClick={() => handleItemClick('Inicio')}
+                            className={getMenuActiveItem() === 'Inicio' ? 'active' : ''}
                         >
                             Inicio
                         </Link>
                     </li>
                     <li>
                         <Link
-                            to="/usuarios"
+                            to="/useradmin"
                             data-item="Usuarios"
-                            className={Consts.activeItem === 'Usuarios' ? 'active' : ''}
-                            onClick={() => handleItemClick('Usuarios')}
+                            className={getMenuActiveItem() === 'Usuarios' ? 'active' : ''}
                         >
                             Usuarios
                         </Link>
@@ -39,8 +48,7 @@ function Menu() {
                         <Link
                             to="/schooladmin"
                             data-item="Escuelas"
-                            className={Consts.activeItem === 'Escuelas' ? 'active' : ''}
-                            onClick={() => handleItemClick('Escuelas')}
+                            className={getMenuActiveItem() === 'Escuelas' ? 'active' : ''}
                         >
                             Escuelas
                         </Link>

@@ -8,6 +8,20 @@ const encodeCredentials = (email, password) => {
 
 export const getUser = async (token) => {
     try {
+        const response = await axios.get(API_URL + '/users/user/'+localStorage.getItem('id'),{
+            headers: {
+                'Authorization': `Bearer ${token}`,
+            }
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error geting User: ', error);
+        return null;
+    }
+};
+
+export const getUsers = async (token) => {
+    try {
         const response = await axios.get(API_URL + '/users',{
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -96,6 +110,30 @@ export const updateUser = async (token,id,updatedUserData) => {
     }
 };
 
+export const updateUserFile = async (token, file) => {
+    try {
+      const formData = new FormData();
+      formData.append('file', file);  // Asegúrate de que la clave sea 'file', que coincide con el servidor
+  
+      const response = await axios.put(
+        `${API_URL}/users/${localStorage.getItem('id')}`,
+        formData,
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      );
+  
+      return response.data;
+    } catch (error) {
+      console.error('Error al actualizar el usuario con archivo: ', error);
+      return null;
+    }
+  };
+  
+
 export const createNewUser = async (potUser,email) => {
     try {
         const password = 'metahospital';
@@ -114,11 +152,13 @@ export const createNewUser = async (potUser,email) => {
 
 const UserService = {
     getUser,
+    getUsers,
     getUserStudents,
     getUserTeachers,
     signin,
     deleteUser,
     updateUser,
+    updateUserFile,
     createNewUser
 }
 

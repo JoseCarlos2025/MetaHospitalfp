@@ -1,10 +1,11 @@
-body{
+body {
     background-color: #E3E2E2;
 }
 
-.container{
+.container {
     display: flex;
 }
+
 .container-left {
     display: flex;
     flex-direction: column;
@@ -14,4 +15,19 @@ body{
 
 .container-right {
     width: 25%;
+}
+
+.squares{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    padding-top: 20px;
+    overflow:auto
+}
+
+
+@media (max-width: 767px) {
+    .container-left {
+        width: 100%;
+    }
 }

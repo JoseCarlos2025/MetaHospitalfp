@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import './teacherschool.css';
 import BasicList from '../../components/basiclist/basiclist';
 import TeacherSchoolsService from '../../services/teacherschool.service';
 import UserService from '../../services/user.service';
-import Menu from '../../components/menu/menu';
+import Menu2 from '../../components/menu2/menu2';
 import Rightmenu from '../../components/rightmenu/rightmenu';
 import { Input, List } from 'antd';
 import Consts from '../../components/consts/consts';
+import PopForm from '../../components/popform/popform';
+import Tag from '../../components/tag/tag';
+import { useLocation } from 'react-router-dom';
 
 function TeacherSchools() {
     const [teacher, setTeacher] = useState([]);
@@ -15,6 +17,8 @@ function TeacherSchools() {
     const [userId, setUserId] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const Headlines = ['Nombre'];
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const location = useLocation(); 
 
     const getTeacher = async () => {
         try {
@@ -42,6 +46,17 @@ function TeacherSchools() {
     useEffect(() => {
         getTeacher();
         getUsers();
+
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth <= 767);
+        };
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
     const filterUsers = (value) => {
@@ -89,9 +104,9 @@ function TeacherSchools() {
     const onDelete = (id) => {
         try {
             getTeacher();
-            
-            TeacherSchoolsService.deleteTeacherFromSchool(localStorage.getItem('AccessToken'), localStorage.getItem('schoolId') ,id);
-            
+
+            TeacherSchoolsService.deleteTeacherFromSchool(localStorage.getItem('AccessToken'), localStorage.getItem('schoolId'), id);
+
             getTeacher();
 
             console.log('teacher deleted successfully');
@@ -107,13 +122,13 @@ function TeacherSchools() {
                 console.error('Error: UserId is not defined.');
                 return;
             }
-    
+
             const teacher = {
                 UserId: userId,
             };
-    
+
             await TeacherSchoolsService.createNewTeacher(localStorage.getItem('AccessToken'), localStorage.getItem('schoolId'), teacher);
-    
+
             getTeacher();
             console.log('New teacher created successfully');
         } catch (error) {
@@ -124,12 +139,14 @@ function TeacherSchools() {
     return (
         <div className='container'>
             <div className='container-left'>
-                <Menu />
+                <Menu2 />
+                <Tag name="Profesores" />
                 <BasicList items={teacher} renderRow={renderSchoolRow} Headlines={Headlines} onDelete={onDelete} />
+                {isSmallScreen && <PopForm renderInputs={renderSchoolImputs} onSubmit={onSubmit} />}
             </div>
-            <div className='container-right'>
-                <Rightmenu renderImputs={renderSchoolImputs} onSubmit={onSubmit} />
-            </div>
+            {!isSmallScreen && <div className='container-right'>
+                <Rightmenu renderImputs={renderSchoolImputs} onSubmit={onSubmit} currentRoute={location.pathname} />
+            </div>}
         </div>
     );
 }

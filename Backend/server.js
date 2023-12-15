@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -17,6 +18,8 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use('/uploads', express.static(path.join(__dirname, 'public/images')));
 
 const db = require("./models");
 
@@ -63,6 +66,8 @@ require("./routes/user.routes")(app);
 require("./routes/school.routes")(app);
 require("./routes/studentschool.routes")(app);
 require("./routes/teacherschool.routes")(app);
+require("./routes/course.routes")(app)
+require("./routes/groups.routes")(app)
 
 let server = null;
 
@@ -83,4 +88,4 @@ server.listen(port, () => {
   console.log('Server started on: ' + port);
 });
 
-module.exports = app;
+module.exports = server;

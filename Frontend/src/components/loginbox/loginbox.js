@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './loginbox.css';
 import { UserOutlined, EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { Button, Input } from 'antd';
+import Medicine from '../../img/Medicine.svg';
 import Logo from '../../img/Icon.png';
 import { useNavigate } from 'react-router-dom';
 
@@ -22,11 +23,23 @@ function LoginBox() {
 
                 const accessToken = response.access_token;
                 const discriminator = response.user.discriminator;
+                const id = response.user.id;
 
                 localStorage.setItem('AccessToken', accessToken);
-                localStorage.setItem('Discriminator', discriminator);
+                localStorage.setItem('discriminator', discriminator);
+                localStorage.setItem('id', id);
 
-                navigate('/useradmin');
+                switch (discriminator) {
+                    case 'admin':
+                        navigate('/adminhome');
+                        break;
+                    case 'Estudiante':
+                    case 'profesor':
+                        navigate('/porfile'); 
+                        break;
+                    default:
+                        break;
+                }
 
                 console.log('Inicio de sesión exitoso.');
             } else {
@@ -42,14 +55,14 @@ function LoginBox() {
             setErrorEmail('Debe rellenar el campo');
             setErrorPassword('Debe rellenar el campo');
             return false;
-        } else if (!emailRegex.test(email) && password){
+        } else if (!emailRegex.test(email) && password) {
             setErrorEmail('Formato de correo electrónico no válido');
             setErrorPassword('');
         } else if (!emailRegex.test(email) && !password) {
             setErrorEmail('Formato de correo electrónico no válido');
             setErrorPassword('Debe completar el campo Contraseña');
             return false;
-        }else if (!password) {
+        } else if (!password) {
             setErrorEmail('');
             setErrorPassword('Debe completar el campo Contraseña');
             return false;
@@ -64,7 +77,7 @@ function LoginBox() {
         <div className='content'>
             <div className='box'>
                 <div className='box-rigt'>
-
+                    <img src={Medicine} alt="medicine" />
                 </div>
                 <div className='box-left'>
                     <div className='logo'>
