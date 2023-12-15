@@ -1,3 +1,5 @@
+# [MetaHospitalfp](https://github.com/JoseCarlos2025/MetaHospitalfp/edit/main/readme.md)
+
 ## Introducción
 
 El proyecto MetaHospitalFP surge como respuesta a la creciente necesidad de proporcionar a los estudiantes de sanidad del IES Los Gladiolos en la isla de Tenerife una experiencia de aprendizaje innovadora. La aplicación de Realidad Virtual tiene como objetivo permitir a los alumnos realizar prácticas de cuidados a neonatos de manera virtual, ofreciendo una simulación inmersiva de situaciones hospitalarias. Desarrollado específicamente para el IES Los Gladiolos, y aspira a extenderse para ser utilizado por todos los centros de sanidad en Canarias, incluyendo universidades.
