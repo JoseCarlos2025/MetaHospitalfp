@@ -84,6 +84,10 @@ La idea central del desarrollo es crear una Aplicación de Realidad Virtual que 
 
 ![Diagrama E_R proyecto](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/0edb94a4-3081-473d-abc8-7fc45ef64d6d)
 
+## Mejora estructural de la Base de Datos 
+
+Para este proyecto, hemos evaluado la idea principal de la base de datos propuesta. Mi compañero y yo hemos identificado fallos y áreas de mejora, especialmente en la estructura actual donde los usuarios son la tabla principal y actúan como discriminador para identificar si son estudiantes o profesores. Esta configuración genera problemas al permitir campos diferentes entre ambos roles, lo que podría resultar en campos vacíos. Además, enfrentamos dificultades para distinguir entre cursos y grupos. Para abordar esto, hemos modificado la estructura, cambiando "curso" a "grupo" y añadiendo una tabla adicional que establece la relación entre grupos y cursos, permitiendo que un curso tenga varios grupos.
+
 ## Prototipo
 
 Prototipo en proceso [figma](https://www.figma.com/file/cKBt0NM8CGovFJGsIVfnug/MetaHospitalFp?type=design&node-id=0%3A1&mode=design&t=XYOpM1Ug3TnG21M6-1)
