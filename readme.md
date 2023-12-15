@@ -111,7 +111,7 @@ Prototipo en proceso [figma](https://www.figma.com/file/cKBt0NM8CGovFJGsIVfnug/M
 1. Clonar el repositorio del servidor desde GitHub:
 
    ```bash
-   git clone [URL_DEL_REPOSITORIO]
+   git clone https://github.com/JoseCarlos2025/MetaHospitalfp
 
 2. Navegar al directorio del servidor:
 
