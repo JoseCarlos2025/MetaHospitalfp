@@ -96,12 +96,10 @@ Prototipo en proceso [figma](https://www.figma.com/file/cKBt0NM8CGovFJGsIVfnug/M
 
 # Manual de Instalación para el Desarrollador
 
-## Aplicación del Servidor
-
 ### Requisitos Previos
 
 - Node.js instalado
-- Base de datos relacional (por ejemplo, MySQL)
+- Base de datos relacional MySQL
 - Gestor de paquetes npm
 
 ### Pasos de Instalación
