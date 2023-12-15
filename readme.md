@@ -116,7 +116,7 @@ Prototipo en proceso [figma](https://www.figma.com/file/cKBt0NM8CGovFJGsIVfnug/M
 2. Navegar al directorio del servidor:
 
    ```bash
-   cd directorio_del_servidor
+   cd backend/
 
 3. Instalar las dependencias:
 
@@ -129,6 +129,24 @@ Prototipo en proceso [figma](https://www.figma.com/file/cKBt0NM8CGovFJGsIVfnug/M
 
    ```bash
    npm start
+
+6. Navegar al directorio de la aplicación:
+
+   ```bash
+   cd frontend/
+
+7. Instalar las dependencias:
+
+   ```bash
+   npm install
+
+8. Configurar los archivo .env con los .env.example:
+   
+9. Iniciar el servidor:
+
+   ```bash
+   npm start
+   
 
 # Conclusión y Reflexiones
 
