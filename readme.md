@@ -1,4 +1,4 @@
-# [MetaHospitalfp](https://github.com/JoseCarlos2025/MetaHospitalfp/edit/main/readme.md)
+# [MetaHospitalfp](https://github.com/JoseCarlos2025/MetaHospitalfp)
 
 ## Introducción
 
