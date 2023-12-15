@@ -94,6 +94,43 @@ Prototipo en proceso [figma](https://www.figma.com/file/cKBt0NM8CGovFJGsIVfnug/M
 * [Express](https://expressjs.com/es/) - Express.js es un marco de aplicaciones web de Node.js utilizado para crear servidores y aplicaciones web.
 * [Sequelize](https://sequelize.org/) - Sequelize es una biblioteca de Node.js que se utiliza para interactuar con bases de datos SQL y es especialmente útil en aplicaciones que utilizan Node.js.
 
+# Manual de Instalación para el Desarrollador
+
+## Aplicación del Servidor
+
+### Requisitos Previos
+
+- Node.js instalado
+- Base de datos relacional (por ejemplo, MySQL)
+- Gestor de paquetes npm
+
+### Pasos de Instalación
+
+1. Clonar el repositorio del servidor desde GitHub:
+
+   ```bash
+   git clone [URL_DEL_REPOSITORIO]
+
+2. Navegar al directorio del servidor:
+
+   ```bash
+   cd directorio_del_servidor
+
+3. Instalar las dependencias:
+
+   ```bash
+   npm install
+
+4. Configurar los archivo .env con los .env.example:
+   
+5. Iniciar el servidor:
+
+   ```bash
+   npm start
+
+# Conclusión y Reflexiones
+
+**MetaHospitalFP** es un proyecto innovador que utiliza la realidad virtual para transformar la formación en el ámbito sanitario. La flexibilidad de realizar prácticas de cuidados a neonatos sin restricciones geográficas es una ventaja clave. La estructura modular y la elección de tecnologías modernas reflejan una planificación cuidadosa para garantizar eficiencia y escalabilidad. La inclusión de manuales detallados destaca el compromiso con la usabilidad. Participar en este proyecto ha sido estimulante, y estoy entusiasmado por contribuir a su desarrollo continuo y su impacto positivo en la educación sanitaria.
 
 ## Autores ✒️
 
