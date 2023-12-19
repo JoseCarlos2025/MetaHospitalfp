@@ -197,11 +197,59 @@ Se proporciona acceso fácil a tutoriales y recursos de ayuda.
 Ejemplos de recursos de ayuda: ![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/41c64684-bd27-4fae-81b5-8e4ec965477c)
 ![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/1f0b15d1-fef1-4fc8-bdfb-f4067f9e96a8)
 
+## Seguridad:
+Manejo de Errores:
+
+# Se implementa el uso de bloques try-catch para controlar los errores de la aplicación.
+Ejemplo de manejo de errores: 
+![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/b041cfb4-685e-4d94-9d44-03d2cb28ba1d)
+
+## Encriptación de Contraseñas:
+
+Se utiliza el algoritmo bcrypt para encriptar las contraseñas de forma segura.
+Ejemplo de encriptación: 
+![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/55df31f7-4d74-4612-892d-da3416336ac6)
+
+## Token de Autenticación:
+
+La autenticación se realiza mediante el uso de tokens (TokenBearer) para mayor seguridad.
+Ejemplo de uso de Token: 
+![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/ecea13dd-4d4b-451b-9d7d-9a36a41d366d)
 
 ### Conclusiones:
 
 La implementación de estas características de usabilidad se ha centrado en hacer que MetaHospitalFp sea accesible y eficiente para los usuarios. La combinación de iconografía clara, navegación intuitiva y feedback efectivo contribuye a una experiencia positiva del usuario.
-   
+
+# Accesibilidad:
+
+## Contraste y Armonización de Colores:
+
+Se ha seleccionado cuidadosamente una paleta de colores con buen contraste para mejorar la legibilidad y la experiencia visual.
+Ejemplo de paleta de colores: 
+![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/c0c38d8a-7928-4bb4-af48-f2bf19c09952)
+
+# Adaptabilidad de la Interfaz:
+
+La aplicación presenta un diseño responsivo que se ajusta automáticamente a diferentes tamaños de pantalla.
+Ejemplo de diseño responsivo: 
+![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/7d06278f-6ee2-4229-9ab4-8ef23fe13445)
+![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/9c7305b7-bef4-419f-a439-bb013c333c99)
+
+
+# Componentes Dinámicos en Dispositivos Móviles:
+
+Al minimizar la pantalla en dispositivos móviles, se han implementado cambios en la disposición de los componentes para facilitar la navegación y mejorar la usabilidad.
+Ejemplo de cambios en dispositivos móviles: 
+
+![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/48bbb287-b7e4-486f-9eb7-820e0818b54d)
+
+
+# Optimización para Dispositivos Pequeños:
+
+Los elementos menos relevantes pueden desaparecer en pantallas más pequeñas, priorizando la visualización de información esencial.
+Ejemplo de optimización para dispositivos pequeños: 
+![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/0356eea7-a3a8-46e7-b4f2-92946036bf87)
+![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/ca591525-82f0-4e56-88f5-3f77741031ea)
 
 # Conclusión y Reflexiones
 
