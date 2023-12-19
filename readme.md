@@ -158,40 +158,45 @@ La usabilidad es una parte fundamental de la experiencia del usuario en MetaHosp
 
 1. Uso de Iconos Claros y Reconocibles:
 Se han seleccionado iconos fácilmente reconocibles para cada función.
-Ejemplos de iconos: [añadir imágenes aquí].
+Ejemplos de iconos: ![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/1386400a-f38a-421a-bec3-2f063da6a423)
 2. Indicadores Visuales:
 Los iconos cambian de color o resaltan cuando se seleccionan.
-Ejemplos visuales: [añadir imágenes aquí].
+Ejemplos visuales: ![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/5e3a0afa-8628-4355-bbf7-66a134e420ef).
 
 ### CRUD (Crear, Leer, Actualizar, Eliminar):
 
 1. Formularios Simplificados:
 La información se pasa de manera clara y directa al formulario.
-Ejemplo de un formulario simplificado: [añadir imagen aquí].
+Ejemplo de un formulario simplificado: ![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/7b4e4d97-8b7f-4c2a-83fe-79aa76b0845d)
 2. Botones Intuitivos:
 Iconos claros para agregar, actualizar, eliminar, etc.
-Ejemplos de botones: [añadir imágenes aquí].
+Ejemplos de botones: ![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/c65d8d79-7bd2-4e1c-bc51-8bf9e619fe01)
 3. Confirmación Visual:
 Iconos específicos para eliminar y editar con papelera y lápiz.
-Ejemplos visuales: [añadir imágenes aquí].
+Ejemplos visuales: ![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/9ebe9a90-ea86-44d0-a9d2-50860242df09)
 
 ### Menús y Navegación:
 
 1. Cambio de Color:
 Los elementos del menú cambian de color al seleccionarse.
-Ejemplo de cambio de color: [añadir imágenes aquí].
+Ejemplo de cambio de color: ![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/a02f414f-366c-42bf-8c12-549e7a58653f)
 2. Efecto de Tamaño:
 Los elementos, como los cards, aumentan de tamaño al pasar el cursor.
-Ejemplos visuales: [añadir imágenes aquí].
+Ejemplos visuales: ![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/39b14ae6-3a87-4855-b563-ed5dcd19d5b2)
 
 ### Feedback y Ayuda:
 
 1. Mensajes Claros:
 Mensajes de error y éxito son claros y fáciles de entender.
-Ejemplos de mensajes: [añadir imágenes aquí].
+Ejemplos de mensajes: ![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/326ff775-efe4-4f80-bf01-f917f8a3cb12)
+![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/3a1c7122-7374-4585-a7c4-64dab141dbc7)
+![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/276dbf2d-7364-4537-a7b3-cd4482637c2c)
+
 2. Recursos de Ayuda:
 Se proporciona acceso fácil a tutoriales y recursos de ayuda.
-Ejemplos de recursos de ayuda: [añadir imágenes aquí].
+Ejemplos de recursos de ayuda: ![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/41c64684-bd27-4fae-81b5-8e4ec965477c)
+![image](https://github.com/JoseCarlos2025/MetaHospitalfp/assets/118464246/1f0b15d1-fef1-4fc8-bdfb-f4067f9e96a8)
+
 
 ### Conclusiones:
 
