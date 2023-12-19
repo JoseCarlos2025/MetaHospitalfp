@@ -149,12 +149,12 @@ Prototipo en proceso [figma](https://www.figma.com/file/cKBt0NM8CGovFJGsIVfnug/M
    ```bash
    npm start
 
-# Usabilidad
+### Usabilidad
 
 ## Introducción:
 La usabilidad es una parte fundamental de la experiencia del usuario en MetaHospitalfp. En este documento, exploraremos las características diseñadas para hacer que la aplicación sea intuitiva y fácil de usar.
 
-### Iconografía:
+# Iconografía:
 
 1. Uso de Iconos Claros y Reconocibles:
 Se han seleccionado iconos fácilmente reconocibles para cada función.
@@ -163,7 +163,7 @@ Ejemplos de iconos: [añadir imágenes aquí].
 Los iconos cambian de color o resaltan cuando se seleccionan.
 Ejemplos visuales: [añadir imágenes aquí].
 
-### CRUD (Crear, Leer, Actualizar, Eliminar):
+# CRUD (Crear, Leer, Actualizar, Eliminar):
 
 1. Formularios Simplificados:
 La información se pasa de manera clara y directa al formulario.
@@ -175,7 +175,7 @@ Ejemplos de botones: [añadir imágenes aquí].
 Iconos específicos para eliminar y editar con papelera y lápiz.
 Ejemplos visuales: [añadir imágenes aquí].
 
-### Menús y Navegación:
+# Menús y Navegación:
 
 1. Cambio de Color:
 Los elementos del menú cambian de color al seleccionarse.
@@ -184,7 +184,7 @@ Ejemplo de cambio de color: [añadir imágenes aquí].
 Los elementos, como los cards, aumentan de tamaño al pasar el cursor.
 Ejemplos visuales: [añadir imágenes aquí].
 
-### Feedback y Ayuda:
+# Feedback y Ayuda:
 
 1. Mensajes Claros:
 Mensajes de error y éxito son claros y fáciles de entender.
@@ -193,7 +193,7 @@ Ejemplos de mensajes: [añadir imágenes aquí].
 Se proporciona acceso fácil a tutoriales y recursos de ayuda.
 Ejemplos de recursos de ayuda: [añadir imágenes aquí].
 
-### Conclusiones:
+# Conclusiones:
 
 La implementación de estas características de usabilidad se ha centrado en hacer que MetaHospitalFp sea accesible y eficiente para los usuarios. La combinación de iconografía clara, navegación intuitiva y feedback efectivo contribuye a una experiencia positiva del usuario.
    
